@@ -1,7 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
-import FoundersGroteskRegular from "./assets/font/Founders_Grotesk/Founders Grotesk Regular 400.otf";
-import FoundersGroteskMedium from "./assets/font/Founders_Grotesk/Founders Grotesk Medium 500.otf";
-// import  FoundersGroteskMedium from "./fonts/roboto-condensed-v19-latin-regular.woff2";
+
 const ResetDefault = css`
   * {
     margin: 0px;
@@ -213,7 +211,7 @@ const Typography = css`
   body {
     color: ${({ theme }) => theme.color.text};
     font-size: ${({ theme }) =>theme.fontSize.sm};
-    font-family: "FoundersGrotesk Regular";
+    font-family: "Poppins Regular";
     font-style: normal;
     font-weight: normal;
     font-stretch: normal;
@@ -227,7 +225,7 @@ const Typography = css`
   h4,
   h5,
   h6 {
-    font-family: "FoundersGrotesk Medium";
+    font-family: "Poppins Medium";
     font-weight: 700;
     line-height: 1.2;
     &::first-letter {
@@ -260,7 +258,7 @@ const Typography = css`
   }
 
   p {
-    font-family: "FoundersGrotesk Regular";
+    font-family: "Poppins Regular";
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.md};
     &.large {
@@ -277,7 +275,7 @@ const Typography = css`
   button,
   .btn,
   a {
-    font-family: "FoundersGrotesk Medium";
+    font-family: "Poppins Medium";
     line-height: 100%;
     font-weight: 500;
     font-size: ${({ theme }) => theme.fontSize.md};
@@ -291,14 +289,6 @@ const Typography = css`
 `;
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'FoundersGrotesk Regular';
-    src: url(${FoundersGroteskRegular}),
-  }
-  @font-face {
-    font-family: 'FoundersGrotesk Medium';
-    src: url(${FoundersGroteskMedium}) format('truetype'),
-  }
   ${ResetDefault}
   ${Typography}
 `;
