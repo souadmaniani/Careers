@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
-
+import FoundersGroteskRegular from "./assets/font/Founders_Grotesk/Founders Grotesk Regular 400.otf";
+import FoundersGroteskMedium from "./assets/font/Founders_Grotesk/Founders Grotesk Medium 500.otf";
+// import  FoundersGroteskMedium from "./fonts/roboto-condensed-v19-latin-regular.woff2";
 const ResetDefault = css`
   * {
     margin: 0px;
@@ -206,38 +208,12 @@ const ResetDefault = css`
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
   }
-
-  /* Hide Summary Marker */
-  details summary::marker {
-    content: "";
-    display: none;
-  }
-
-  // Custom Scrollbar
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background-color: ${({ theme }) => theme.color.background};
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.color.secondaryBg};
-    border-radius: 5px;
-    &:hover {
-      background-color: ${({ theme }) => theme.color.border};
-    }
-  }
 `;
 const Typography = css`
   body {
-    color: ${({ theme }) => theme.color.darkerText};
-    font-size: ${({ theme }) => theme.fontSize.sm};
-    font-family: "Poppins regular", sans-serif;
+    color: ${({ theme }) => theme.color.text};
+    font-size: ${({ theme }) =>theme.fontSize.sm};
+    font-family: "FoundersGrotesk Regular";
     font-style: normal;
     font-weight: normal;
     font-stretch: normal;
@@ -251,7 +227,7 @@ const Typography = css`
   h4,
   h5,
   h6 {
-    font-family: "Poppins Bold";
+    font-family: "FoundersGrotesk Medium";
     font-weight: 700;
     line-height: 1.2;
     &::first-letter {
@@ -284,14 +260,14 @@ const Typography = css`
   }
 
   p {
-    font-family: "PTSerif Regular";
+    font-family: "FoundersGrotesk Regular";
     font-weight: 400;
-    font-size: ${({ theme }) => theme.fontSize.sm};
+    font-size: ${({ theme }) => theme.fontSize.md};
     &.large {
-      font-size: ${({ theme }) => theme.fontSize.re};
+      font-size: ${({ theme }) => theme.fontSize.lg};
     }
     &.small {
-      font-size: ${({ theme }) => theme.fontSize.xs};
+      font-size: ${({ theme }) => theme.fontSize.sm};
     }
     &::first-letter {
       text-transform: uppercase;
@@ -301,113 +277,28 @@ const Typography = css`
   button,
   .btn,
   a {
-    font-family: "Poppins Medium";
+    font-family: "FoundersGrotesk Medium";
     line-height: 100%;
     font-weight: 500;
-    font-size: ${({ theme }) => theme.fontSize.xs};
+    font-size: ${({ theme }) => theme.fontSize.md};
     cursor: pointer;
   }
 
   a {
-    color: ${({ theme }) => theme.color.primary};
-  }
-
-  label {
-    font-family: "Poppins Semibold";
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSize.xs};
-    text-transform: capitalize;
-  }
-
-  // How typogrraphy should looks like on mobile version
-  @media only screen and (max-width: 576px) {
-    h1 {
-      font-size: 33px;
-    }
-    h2 {
-      font-size: 25px;
-    }
-    h3 {
-      font-size: 22px;
-    }
-    h4 {
-      font-size: 20px;
-    }
-    h5 {
-      font-size: 17px;
-    }
-    p {
-      font-size: 14px;
-      &.large {
-        font-size: 16px;
-      }
-    }
-  }
-`;
-const Helpers = css`
-  /* Modal Overlay Background */
-  .ReactModal__Overlay {
-    background-color: ${({ theme }) => theme.color.overlay} !important;
-    z-index: 100;
-  }
-  /* Tooltip */
-  .__react_component_tooltip {
-    visibility: hidden !important;
-  }
-  @media only screen and (max-width: 1200px) {
-    .__react_component_tooltip {
-      visibility: visible !important;
-      background-color: ${({ theme }) => theme.color.secondaryBg} !important;
-      color: ${({ theme }) => theme.color.primaryText} !important;
-      border: 1px solid ${({ theme }) => theme.color.border} !important;
-      ::after {
-        border-right-color: ${({ theme }) => theme.color.secondaryBg} !important;
-      }
-    }
-  }
-  /* Horizontal Rule */
-  hr {
-    width: 100%;
-    height: 1px;
-    background-color: ${({ theme }) => theme.color.border};
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-`;
-const Layout = css`
-  body {
-    background-color: ${({ theme }) => theme.color.background};
-    color: ${({ theme }) => theme.color.darkerText};
-    height: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-
-  #root {
-    height: 100%;
-    display: flex;
-
-    & > *:last-child {
-      flex: 1;
-      width: 100%;
-      @media (max-width: 1200px) {
-        /* width: calc(100% - 64px); */
-      }
-    }
-  }
-
-  main {
-    position: relative;
-    height: calc(100% - 50px);
-    width: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
+	color: ${({ theme }) => theme.color.primary};
+	background-color: {theme.color.primary};
   }
 `;
 
 export const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'FoundersGrotesk Regular';
+    src: url(${FoundersGroteskRegular}),
+  }
+  @font-face {
+    font-family: 'FoundersGrotesk Medium';
+    src: url(${FoundersGroteskMedium}) format('truetype'),
+  }
   ${ResetDefault}
-  ${Layout}
   ${Typography}
-  ${Helpers}
 `;
