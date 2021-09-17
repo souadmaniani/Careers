@@ -24,7 +24,8 @@ const color = {
     secondaryBg: "#ffffff",
     primaryBg: "#f3f7f8",
     highlight: "#f8879f",
-    buttonHight: "#f8879f"
+    buttonHight: "#f8879f",
+    border: "#e4e4e4",
 }
 // export const themeDark = {
 //   mode: "dark",

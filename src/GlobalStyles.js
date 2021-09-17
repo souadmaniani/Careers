@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 const ResetDefault = css`
   * {
@@ -275,18 +275,18 @@ const Typography = css`
   button,
   .btn,
   a {
-    font-family: "Poppins Medium";
     line-height: 100%;
-    font-weight: 500;
-    font-size: ${({ theme }) => theme.fontSize.md};
     cursor: pointer;
-  }
-
-  a {
-	color: ${({ theme }) => theme.color.primary};
-	background-color: {theme.color.primary};
+    font-size: ${({ theme }) => theme.fontSize.sm};
   }
 `;
+
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+  max-width: 1320px;
+`
 
 export const GlobalStyles = createGlobalStyle`
   ${ResetDefault}
