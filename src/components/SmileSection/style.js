@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Container } from '../../GlobalStyles'
 
 export const Section = styled.section`
     background-color: ${({theme}) => theme.color.primaryBg};
@@ -6,6 +7,9 @@ export const Section = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+`
+export const SectionContainer = styled(Container)`
+    position: relative;
 `
 export const Help = styled.div`
     text-align: center;

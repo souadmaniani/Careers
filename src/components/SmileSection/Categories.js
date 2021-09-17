@@ -6,13 +6,17 @@ const CategoryMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin:0 auto 62px;
+    max-width: 720px;
     & > p {
         color: ${({theme}) => theme.color.lighterText};
         font-size: ${({theme}) => theme.fontSize.sm};
+        margin-bottom: 14px;
     }
 `
 const Items = styled.div`
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
 `
@@ -23,16 +27,18 @@ const Tag = styled.div`
     gap: 10px;
     padding: 8px 16px;
     border-radius: 39px;
+    & > p {
+        font-size: ${({theme}) => theme.fontSize.sm};
+    }
 `
 const TagNumber = styled.div`
-    width: 25px;
-    height: 25px;
+    padding: 0 8px;
     border-radius: 84px;
     background-color: ${({theme}) => theme.color.primary};
     text-align: center;
     color: ${({theme}) => theme.color.white};
     font-family: "Poppins medium";
-
+    font-size: ${({theme}) => theme.fontSize.sm};
 `
 
 
