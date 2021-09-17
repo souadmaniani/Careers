@@ -37,9 +37,9 @@ export const NavItem = styled.li`
     padding: calc((96px - 16px) /2) 0;
     position: relative;
     &:hover {
-        border-bottom: ${({dropdown}) => dropdown && `3px solid ${({theme}) => theme.color.primary}`};
+        ${({dropdown}) => !dropdown &&
+        `border-bottom: 3px solid #4ccfad;`}
     }
-
 `
 export const NavLink = styled(Link)`
     display: flex;
@@ -63,5 +63,6 @@ export const ButtonStarted = styled.button`
     background-color: ${({theme}) => theme.color.primary};
     padding: 12px 16px;
     font-family: 'Poppins Medium';
+    border-radius: 2px;
 `
 

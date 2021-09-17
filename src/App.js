@@ -2,12 +2,11 @@ import './style.css'
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import theme from "./theme";
-import { NavBar } from "./components";
+import { NavBar, SmileSection, Card } from "./components";
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Link
   } from "react-router-dom";
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route exact path="/">
-					
+					<SmileSection />
 				</Route>
 			</Switch>
 		</Router>

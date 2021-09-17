@@ -11,7 +11,6 @@ const DropDownMenu = styled.ul`
     width: 100%;
     top: 80px;
     left: 1rem;
-
 `
 const DropDownItem = styled.li`
     &:not(:first-child) {
@@ -25,6 +24,7 @@ const DropDownLink = styled(Link)`
         color: ${({theme}) => theme.color.primary}
     }
 `
+
 const DropDown = () => {
     return (
         <DropDownMenu>
@@ -40,3 +40,5 @@ const DropDown = () => {
 }
 
 export default DropDown
+
+

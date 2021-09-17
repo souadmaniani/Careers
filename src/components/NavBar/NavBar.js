@@ -25,7 +25,7 @@ const NavBar = () => {
                             <NavLink to='/' onClick={closeDropDown}>Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='/' onClick={closeDropDown}>Go digital</NavLink>
+                            <NavLink to='/digital' onClick={closeDropDown}>Go digital</NavLink>
                         </NavItem>
                         <NavItem dropdown={dropdown}>
                             <NavLink to='/' onClick={handleClick}>
@@ -37,8 +37,8 @@ const NavBar = () => {
                     </NavMenu>
                 </RightSide>
                 <LeftSide>
-                    <LogLink>Log into portal</LogLink>
-                    <ButtonStarted>Get Started</ButtonStarted>
+                    <LogLink to='/login'>Log into portal</LogLink>
+                    <ButtonStarted to='/getStarted'>Get Started</ButtonStarted>
                 </LeftSide>
             </NavBarContainer>
         </Nav>
