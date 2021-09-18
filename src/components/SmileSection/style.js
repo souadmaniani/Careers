@@ -40,8 +40,10 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     background-color: ${({theme}) => theme.color.primary};
-    padding: 12px 73px;
+    padding: 16px 73px;
     gap: 8px;
     border-radius: 2px;
-   
+`
+export const Image = styled.img`
+    position: absolute;
 `

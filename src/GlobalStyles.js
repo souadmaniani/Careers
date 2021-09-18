@@ -158,10 +158,10 @@ const ResetDefault = css`
   * 2. Improve image quality when scaled in IE 7.
   */
 
-  img {
+   img {
     border: 0; /* 1 */
     -ms-interpolation-mode: bicubic; /* 2 */
-    max-width: 100%;
+    /* max-width: 100%; */
   }
 
   /**

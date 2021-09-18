@@ -17,7 +17,7 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route exact path="/">
-					<SmileSection />
+					{/* <SmileSection /> */}
 				</Route>
 			</Switch>
 		</Router>

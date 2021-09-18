@@ -6,7 +6,7 @@ const CategoryMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:0 auto 62px;
+    margin:0 auto 67px;
     max-width: 720px;
     & > p {
         color: ${({theme}) => theme.color.lighterText};

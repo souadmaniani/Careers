@@ -26,7 +26,6 @@ export const LeftSide = styled.div`
 export const NavLogo = styled(Link)`
     display: inline-block;
     margin-right: 40px;
-
 `
 export const NavMenu = styled.ul`
     display: flex;

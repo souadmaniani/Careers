@@ -1,8 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { DropDownItems } from "./DropDownItems";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 const DropDownMenu = styled.ul`
+    z-index: 2;
     background-color: ${({theme}) => theme.color.white};
     position: absolute;
     padding: 1rem;
