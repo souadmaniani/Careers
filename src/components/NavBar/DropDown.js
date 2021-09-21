@@ -7,11 +7,11 @@ const DropDownMenu = styled.ul`
     z-index: 2;
     background-color: ${({theme}) => theme.color.white};
     position: absolute;
-    padding: 1rem;
+    padding: 0.5rem;
     border: 1px solid ${({theme})=> theme.color.border};
     border-radius: 5px;
     width: 100%;
-    top: 80px;
+    top: 70px;
     left: 1rem;
 `
 const DropDownItem = styled.li`
@@ -27,13 +27,13 @@ const DropDownLink = styled(Link)`
     }
 `
 
-const DropDown = () => {
+const DropDown = ({closeDropDown}) => {
     return (
         <DropDownMenu>
             {
             DropDownItems.map((item, index)=> { return (
                 <DropDownItem key={index}>
-                    <DropDownLink to={item.path}>{item.title}</DropDownLink>
+                    <DropDownLink to={item.path} onClick={closeDropDown}>{item.title}</DropDownLink>
                 </DropDownItem>
             )
             })}

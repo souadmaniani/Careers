@@ -36,14 +36,14 @@ export const Images=[
         alt: "women4",
         top: "",
         left:"",
-        bottom: "127px",
-        right: "70px"
+        bottom: "132px",
+        right: "73px"
     },
     {
         src: Man1,
         alt: "man1",
         top: "160px",
-        left:"199px",
+        left:"180px",
         right:"",
         bottom:""
     },

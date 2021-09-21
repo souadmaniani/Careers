@@ -1,2 +1,5 @@
 https://styled-components.com/docs/basics#getting-started
-fix logo display (img: max-width: 100%; in GlobalStyles)
+click on logo --> go to home page on mobile
+fix touth height on ipad pro
+Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
+use windowDimensions unstead of isMobile

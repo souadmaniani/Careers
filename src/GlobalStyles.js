@@ -256,21 +256,34 @@ const Typography = css`
   h6 {
     font-size: ${({ theme }) => theme.fontSize.sm};
   }
+  
+
 
   p {
     font-family: "Poppins Regular";
     font-weight: 400;
-    font-size: ${({ theme }) => theme.fontSize.md};
-    &.large {
-      font-size: ${({ theme }) => theme.fontSize.lg};
-    }
-    &.small {
-      font-size: ${({ theme }) => theme.fontSize.sm};
-    }
+    font-size: 23px;
     &::first-letter {
       text-transform: uppercase;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+  h1 {
+    font-size: ${({ theme }) => theme.fontSize.xll};
+  }
+  h4 {
+    font-size: ${({ theme }) => theme.fontSize.re};
+  }
+  p {
+      font-size: ${({ theme }) => theme.fontSize.re};
+    }
+}
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: ${({ theme }) => theme.fontSize.sm};
+    }
+}
 
   button,
   .btn,
@@ -286,6 +299,19 @@ export const Container = styled.div`
   padding: 0 48px;
   width: 100%;
   max-width: 1320px;
+  @media screen and (max-width: 766px) {
+    padding: 0 16px;
+  }
+`
+export const ButtonStarted = styled.button`
+    color: ${({theme}) => theme.color.white};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({theme}) => theme.color.primary};
+    padding: 12px 16px;
+    font-family: 'Poppins Medium';
+    border-radius: 2px;
 `
 
 export const GlobalStyles = createGlobalStyle`

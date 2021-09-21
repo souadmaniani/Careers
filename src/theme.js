@@ -13,6 +13,7 @@ const fontSize = {
   md: "24px",
   lg: "28px",
   xl: "32px",
+  xll: "36px",
   xxl: "48px",
 };
 

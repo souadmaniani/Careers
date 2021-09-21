@@ -2,7 +2,7 @@ import './style.css'
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import theme from "./theme";
-import { NavBar, SmileSection, Card } from "./components";
+import { NavBar, Home } from "./components";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -17,7 +17,7 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route exact path="/">
-					{/* <SmileSection /> */}
+					<Home />
 				</Route>
 			</Switch>
 		</Router>

@@ -54,14 +54,3 @@ export const LogLink = styled(Link)`
     color: ${({theme}) => theme.color.lighterText};
     margin-right: 24px;
 `
-export const ButtonStarted = styled.button`
-    color: ${({theme}) => theme.color.white};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${({theme}) => theme.color.primary};
-    padding: 12px 16px;
-    font-family: 'Poppins Medium';
-    border-radius: 2px;
-`
-

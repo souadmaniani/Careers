@@ -1,24 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Nav, NavBarContainer, NavLogo, NavMenu, NavItem,
-        NavLink, LogLink, ButtonStarted, RightSide, LeftSide } from "./style";
+        NavLink, LogLink, RightSide, LeftSide } from "./style";
 import Logo  from '../../assets/images/Logo.svg'
 import { AiOutlineDown } from 'react-icons/ai';
 import DropDown from "./DropDown";
-import { FaTimes, FaBars } from "react-icons/fa";
-import {
-    // BrowserView,
-    // MobileView,
-    // isBrowser,
-    isMobile
-  } from "react-device-detect";
-import styled from 'styled-components';
-// const IpadIcon = styled.div`
-//     display: none;
-//     @media (max-width: 768px) {
-//         display: block;
-//   }
-// `
-
+import { isMobile} from "react-device-detect";
+import { ButtonStarted } from '../../GlobalStyles'
 import NavBarMobile from './NavBarMobile'
 const NavBar = () => {
     const [dropdown, setdropdown] = useState(false);
@@ -28,23 +15,18 @@ const NavBar = () => {
     const closeDropDown = ()=>{
         setdropdown(false);
     }
-    const [iconClick, setIconClick] = useState(false);
-    const handleIconClick=()=> {
-        setIconClick(!iconClick);
-    }
+    
     return (
         <>
-            { isMobile ?<NavBarMobile />:
+            { isMobile ?
+            <NavBarMobile dropdown={dropdown} setdropdown ={ setdropdown}/>:
             <Nav>
                 <NavBarContainer>
                     <RightSide>
                         <NavLogo to='/'>
                             <img src={Logo} alt="DANDY" />
                         </NavLogo>
-                        {/* <IpadIcon onClick={handleIconClick}>
-                            {iconClick ? <FaBars /> : <FaTimes />}
-                        </IpadIcon> */}
-                        <NavMenu click={iconClick}>
+                        <NavMenu>
                             <NavItem>
                                 <NavLink to='/' onClick={closeDropDown}>Home</NavLink>
                             </NavItem>
