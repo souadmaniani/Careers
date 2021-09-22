@@ -8,7 +8,6 @@ export const MissionContainer = styled(Container)`
         margin-top: 45px;
     }
 `
-
 export const Missions = styled.div`
     display: flex;
     flex-direction: column;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { CategoryItems } from './CategoryItems'
 import { CategoriesCarousel } from './CategoriesCarousel'
 import Tag from '../Tag'
-import { isMobile } from 'react-device-detect'
+import useWindowDimensions from '../windowDimension'
 
 const CategoryMenu = styled.div`
     display: flex;
@@ -25,9 +25,11 @@ const Items = styled.div`
     gap: 16px;
 `
 const Categories = () => {
+
+    const { width } = useWindowDimensions();
     return (
         <>
-        { isMobile ? <CategoriesCarousel /> : 
+        { width <= 768 ? <CategoriesCarousel /> : 
             <CategoryMenu>
                 <p>Or select one of the categories below to quickly see available jobs by department</p>
                 <Items>

@@ -4,11 +4,11 @@ import {Container} from '../../GlobalStyles'
 import styled from 'styled-components'
 import Card from './Card'
 import { CardsItems } from './CardsItems'
-import { isMobile } from 'react-device-detect'
 import CoreSectionMobile from './CoreSectionMobile'
+import useWindowDimensions from '../windowDimension'
 
 const CardsSection = styled.div`
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
         margin-top: 8.5rem;
     }
 `
@@ -22,9 +22,10 @@ const Cards = styled.div`
 `
 
 const CoreValuesSection = () => {
+    const { width } = useWindowDimensions();
     return (
         <CardsSection>
-            { isMobile ? <CoreSectionMobile /> :
+            { width <= 768 ? <CoreSectionMobile /> :
 
                 <NewContainer>
                     <Paragraph mb="8px" pWidth="68%" margin="0 0 40px"

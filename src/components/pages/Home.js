@@ -1,5 +1,6 @@
 import React from 'react'
-import { SmileSection, MissionSection, ImagesSection, CoreValuesSection } from '..';
+import { SmileSection, MissionSection, ImagesSection, CoreValuesSection,
+        Employes } from '..';
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <MissionSection />
             <ImagesSection />
             <CoreValuesSection />
+            <Employes />
         </>
     )
 }

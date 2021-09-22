@@ -4,9 +4,9 @@ import { Nav, NavBarContainer, NavLogo, NavMenu, NavItem,
 import Logo  from '../../assets/images/Logo.svg'
 import { AiOutlineDown } from 'react-icons/ai';
 import DropDown from "./DropDown";
-import { isMobile} from "react-device-detect";
 import { ButtonStarted } from '../../GlobalStyles'
 import NavBarMobile from './NavBarMobile'
+import useWindowDimensions from '../windowDimension';
 const NavBar = () => {
     const [dropdown, setdropdown] = useState(false);
     const handleClick=()=>{
@@ -15,10 +15,10 @@ const NavBar = () => {
     const closeDropDown = ()=>{
         setdropdown(false);
     }
-    
+    const { width } = useWindowDimensions();
     return (
         <>
-            { isMobile ?
+            { width <= 768 ?
             <NavBarMobile dropdown={dropdown} setdropdown ={ setdropdown}/>:
             <Nav>
                 <NavBarContainer>

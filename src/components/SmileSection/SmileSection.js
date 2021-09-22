@@ -3,14 +3,14 @@ import Categories from './Categories';
 import { Section, Help, SectionContainer, Image, Border } from "./style";
 import { Images } from "./Images";
 import ButtonRole from "./ButtonRole";
-import { isMobile } from "react-device-detect";
 import SmileSectionMobile from "./SmileSectionMobile";
 import Paragraph from '../Paragraph'
+import useWindowDimensions from '../windowDimension';
 const SmileSection = () => {
-  
+  const { width } = useWindowDimensions();
     return (
         <Section>
-            {isMobile ? <SmileSectionMobile /> :
+            { width <= 768 ? <SmileSectionMobile /> :
             <SectionContainer>
                 <Help>
                     <Paragraph maxWidth="49%" mb="21px" margin="0 0 20px"

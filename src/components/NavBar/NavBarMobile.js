@@ -95,7 +95,7 @@ const NavBarMobile = ({dropdown, setdropdown}) => {
     return (
         <Nav>
             <NavBarContainer>
-                <NavLogo to='/'>
+                <NavLogo to='/' onClick={closeDropDown}>
                     <img src={Logo} alt="DANDY" />
                 </NavLogo>
                 <MobileIcon onClick={handleIconClick}>
