@@ -5,10 +5,11 @@ import Union2 from '../../assets/images/Union2.svg'
 
 const SimpleCardContainer = styled.div`
   position: relative;
-  padding: 14.5px 0;
-  border: solid 0.8px ${({theme}) => theme.color.primaryBg};
+  padding: ${({text}) => text ? `14.5px 15px` : `0`};
+  border: ${({text}) => text ? `solid 0.8px #f3f7f8` : `0` };
   background-color: ${({theme}) => theme.color.primaryBg};
-  border-radius: 6px;
+  border-radius: 22px;
+  width: 100%;
   & > p {
       font-size: 20px;
   }
@@ -34,12 +35,13 @@ const SimpleCardContainer = styled.div`
     background-color: red;
   }
 `
-const SimpleCard = ({children, yes, yes2, yes3}) => {
+const SimpleCard = ({children, yes, yes2, yes3, text}) => {
+  console.log(yes, yes2, yes3);
     return (
-        <SimpleCardContainer  yes={yes} yes2={yes2} yes3={yes3}>
-            <img src={Union} alt="" />
+        <SimpleCardContainer  yes={yes} yes2={yes2} yes3={yes3} text={text}>
+            {/* <img src={Union} alt="" />
             <img src={Union2} alt="" />
-            <img src={Union} alt="" />
+            <img src={Union} alt="" /> */}
             {children}
         </SimpleCardContainer>
     )
