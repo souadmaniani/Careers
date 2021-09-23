@@ -15,7 +15,7 @@ const HeaderContainer = styled.div`
         font-size: 20px;
     }
     img {
-        width: 16px;
+        width: 16px !important;
         height: 16px;
     }
 `

@@ -42,6 +42,6 @@ export const EmployesData = [
         img: taynan,
         text1: "Before I worked at Dandy, I didn't fully understand what a high performing organization really looked like. From my first day here, and for the last 9 months, I have been amazed at the dedication and excellence of my teammates. We constantly seek ways to improve ourselves and unblock each other, ensuring that we grow every day. I am a completely different engineer than I was when I joined, and I can say the same for everyone that has grown alongside me.",
         text2: "",
-        cards:[[""], ["yes2", "yes3"]],
+        cards:[["", "yes2", "yes3"], [""]],
     },
 ]

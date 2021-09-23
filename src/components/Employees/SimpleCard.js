@@ -11,37 +11,37 @@ const SimpleCardContainer = styled.div`
   border-radius: 22px;
   width: 100%;
   & > p {
-      font-size: 20px;
+      font-size: 18px;
   }
   & > img:first-child {
     visibility: ${({yes}) => yes ? `visible` : `hidden`};
     position: absolute;
     right: -11px;
     bottom: -2px;
-    background-color: red;
+    width: auto !important;
   }
   & > img:nth-child(2) {
     visibility: ${({yes2}) => yes2 ? `visible` : `hidden`};
     position: absolute;
     left: 0px;
-    bottom: -22px;
-    background-color: red;
+    bottom: -13px;
+    width: auto !important;
   }
   & > img:nth-child(3) {
     visibility: ${({yes3}) => yes3 ? `visible` : `hidden`};
     position: absolute;
     right: -11px;
-    bottom: -23px;
-    background-color: red;
+    bottom: -13px;
+    width: auto !important;
   }
 `
 const SimpleCard = ({children, yes, yes2, yes3, text}) => {
   console.log(yes, yes2, yes3);
     return (
         <SimpleCardContainer  yes={yes} yes2={yes2} yes3={yes3} text={text}>
-            {/* <img src={Union} alt="" />
+            <img src={Union} alt="" />
             <img src={Union2} alt="" />
-            <img src={Union} alt="" /> */}
+            <img src={Union} alt="" />
             {children}
         </SimpleCardContainer>
     )
