@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
 const ButtonContainer = styled.div`
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    border: 4px solid ${({theme})=> theme.color.border}
+    display: flex ;
+    gap: 5px ;
+    align-items: center ;
+    border-bottom: 4px solid ${({theme})=> theme.color.border} ;
     & > p {
         font-size: 20px;
         font-family: "Poppins medium";

@@ -36,7 +36,6 @@ const SimpleCardContainer = styled.div`
   }
 `
 const SimpleCard = ({children, yes, yes2, yes3, text}) => {
-  console.log(yes, yes2, yes3);
     return (
         <SimpleCardContainer  yes={yes} yes2={yes2} yes3={yes3} text={text}>
             <img src={Union} alt="" />

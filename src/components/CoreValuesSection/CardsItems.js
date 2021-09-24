@@ -33,4 +33,9 @@ export const CardsItems = [
         title: "Low Ego",
         content: "We start all conversations with the goal of building the best business possible not personal gain. The challenge of changing the dental industry is hard enough so check the egos at the door, be prepared to admit when you are wrong, and get ready to sweep the floors if that will help us serve customers."
     },
+    {
+        emoji: Notes,
+        title: "Low Ego",
+        content: "We start all conversations with the goal of building the best business possible not personal gain. The challenge of changing the dental industry is hard enough so check the egos at the door, be prepared to admit when you are wrong, and get ready to sweep the floors if that will help us serve customers."
+    },
 ]

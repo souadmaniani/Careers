@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SimpleCard from './SimpleCard';
 import CardHeader from './CardHeader';
@@ -6,7 +6,7 @@ import { EmployesData } from './EmployesItems';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Container } from '../../GlobalStyles'
-
+import Button from './Button'
 const EmployesSection = styled.div`
     /* border: 1px solid; */
 `
@@ -41,26 +41,44 @@ const Cards = styled.div`
     gap: 30px;
     margin-top: 8px;
 `
-const CustomDot = ({ onMove, index, onClick, active }) => {
-    // onMove means if dragging or swiping in progress.
-    // active is provided by this lib for checking if the item is active or not.
+const NewCarousel = styled(Carousel)`
+    .thumbs {
+        display: flex !important;
+        justify-content: space-between !important;
+        gap: 40px;
+        li {
+            width: auto !important;
+            border: none !important;
+            cursor: pointer;
+        }
+    }
+`
+
+const RenderThumbs = (selected)=> {
+    console.log(`selected: |${selected}|`);
     return (
-      <li
-        className={active ? "active" : "inactive"}
-        onClick={() => onClick()}
-      >
-        {index + 1}
-      </li>
-    );
-  };
+
+        EmployesData.filter((item)=> EmployesData[selected] !== item).map((item, index) => { return (
+            <Button key={index} EmployeName={item.name} EmployeJob={item.job} />
+        )})
+        )
+}
 
 const Employes = () => {
+    
+    const [selected, setSelected] = useState(0);
+    const GetSelectedItem = (index)=>{
+        setSelected(index)
+    }
     return (
         <EmployesSection>
             <NewContainer>
-                <Carousel autoPlay={false}  showStatus={false} showArrows={false} customDot={<CustomDot />}>
+                <NewCarousel autoPlay={false}  showStatus={false} showArrows={false}  showIndicators={false}
+                    renderThumbs= { ()=> RenderThumbs(selected)} onChange={GetSelectedItem}
+                >
                 {
-                    EmployesData.map((item, index)=> { return (
+                    EmployesData.map((item, index)=> {
+                        return (
                         <EmployeContainer key = {index}>
                             <LeftSide>
                                 <CardHeader EmployeName={item.name} EmployeJob={item.job} />
@@ -80,7 +98,7 @@ const Employes = () => {
                     )
                     })
                 }
-                </Carousel>
+                </NewCarousel>
            </NewContainer>
         </EmployesSection>
     )
