@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 import SimpleCard from './SimpleCard';
 import CardHeader from './CardHeader';
@@ -7,16 +7,17 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Container } from '../../GlobalStyles'
 import Button from './Button'
+import useWindowDimensions from '../windowDimension';
+import EmployesMobile from './EmployesMobile'
+
 const EmployesSection = styled.div`
-    /* border: 1px solid; */
 `
 const NewContainer = styled(Container)`
+    position: relative;
     padding: 0px 117px 80px 132px;
-    /* border: 1px solid; */
 `
 const EmployeContainer = styled.div`
     position: relative;
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
 `
@@ -25,11 +26,9 @@ const LeftSide= styled.div`
     position: absolute;
     z-index: 2;
     text-align: start;
-    /* padding-top: 76px; */
 `
 const RightSide= styled.div`
     width: 48% !important;
-    /* height: 584px; */
     margin-left: auto;
     & > img {
         height: 90%;
@@ -42,39 +41,46 @@ const Cards = styled.div`
     margin-top: 8px;
 `
 const NewCarousel = styled(Carousel)`
-    .thumbs {
-        display: flex !important;
-        justify-content: space-between !important;
-        gap: 40px;
-        li {
-            width: auto !important;
-            border: none !important;
-            cursor: pointer;
+    li {
+        height: 100%;
+    }
+    .carousel:nth-child(2) {
+        position: absolute;
+        z-index: 2;
+        width: auto;
+        .thumbs {
+            display: flex !important;
+            justify-content: space-between !important;
+            gap: 40px;
+            .selected {
+                display:none;
+            }
+            li {
+                width: auto !important;
+                border: none !important;
+                cursor: pointer;
+            }
         }
     }
 `
 
-const RenderThumbs = (selected)=> {
-    console.log(`selected: |${selected}|`);
+const RenderThumbs = ()=> {
     return (
-
-        EmployesData.filter((item)=> EmployesData[selected] !== item).map((item, index) => { return (
-            <Button key={index} EmployeName={item.name} EmployeJob={item.job} />
+        EmployesData.map((item, index) => { return (
+                <Button key={(index)} EmployeName={item.name} EmployeJob={item.job} /> 
         )})
         )
 }
 
+
 const Employes = () => {
-    
-    const [selected, setSelected] = useState(0);
-    const GetSelectedItem = (index)=>{
-        setSelected(index)
-    }
+    const { width } = useWindowDimensions();
     return (
         <EmployesSection>
+            { width <= 1370 ? <EmployesMobile /> :
             <NewContainer>
-                <NewCarousel autoPlay={false}  showStatus={false} showArrows={false}  showIndicators={false}
-                    renderThumbs= { ()=> RenderThumbs(selected)} onChange={GetSelectedItem}
+                <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false}
+                    renderThumbs= {RenderThumbs}
                 >
                 {
                     EmployesData.map((item, index)=> {
@@ -100,6 +106,7 @@ const Employes = () => {
                 }
                 </NewCarousel>
            </NewContainer>
+    }
         </EmployesSection>
     )
 }

@@ -10,6 +10,7 @@ import useWindowDimensions from '../windowDimension'
 const CardsSection = styled.div`
     @media screen and (max-width: 767px) {
         margin-top: 8.5rem;
+        margin-bottom: 86px;
     }
 `
 const NewContainer = styled(Container)`
