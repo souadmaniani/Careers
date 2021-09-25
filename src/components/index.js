@@ -4,4 +4,5 @@ export { default as MissionSection} from './MissionSection/MissionSection';
 export { default as ImagesSection} from './ImagesSection/ImagesSection';
 export { default as CoreValuesSection} from './CoreValuesSection/CoreValuesSection';
 export { default as Employes } from './Employees/Employes';
+export { default as WorkHappier } from './WorkHappier/WorkHappier';
 export { default as Home } from './pages/Home';
