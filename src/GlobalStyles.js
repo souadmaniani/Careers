@@ -302,6 +302,9 @@ export const Container = styled.div`
   @media screen and (max-width: 766px) {
     padding: 0 16px;
   }
+  @media screen and (max-width: 1024px) {
+  }
+
 `
 export const ButtonStarted = styled.button`
     color: ${({theme}) => theme.color.white};

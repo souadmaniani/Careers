@@ -26,7 +26,7 @@ const Content = styled.div`
 `
 const Image = styled.img`
     display: none;
-    @media screen and (max-width: 786px) {
+    @media screen and (max-width: 767px) {
         display: block;
         position: absolute;
         left: ${({left}) => left};

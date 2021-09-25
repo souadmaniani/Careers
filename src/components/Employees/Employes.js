@@ -15,6 +15,9 @@ const EmployesSection = styled.div`
 const NewContainer = styled(Container)`
     position: relative;
     padding: 0px 117px 80px 132px;
+    /* @media screen and (max-width: 1024px) {
+        padding: 0px 132px 80px;
+    } */
 `
 const EmployeContainer = styled.div`
     position: relative;
@@ -43,6 +46,7 @@ const Cards = styled.div`
 const NewCarousel = styled(Carousel)`
     li {
         height: 100%;
+       
     }
     .carousel:nth-child(2) {
         position: absolute;
@@ -77,7 +81,7 @@ const Employes = () => {
     const { width } = useWindowDimensions();
     return (
         <EmployesSection>
-            { width <= 1370 ? <EmployesMobile /> :
+            { width <= 1024 ? <EmployesMobile /> :
             <NewContainer>
                 <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false}
                     renderThumbs= {RenderThumbs}

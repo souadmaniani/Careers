@@ -1,13 +1,14 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import styled from 'styled-components';
 import SimpleCard from './SimpleCard';
-import CardHeader from './CardHeader';
+import CardHeaderMobile from './CardHeaderMobile';
 import { EmployesData } from './EmployesItems';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Container } from '../../GlobalStyles'
 import sticker from '../../assets/images/sticker.png'
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import useWindowDimensions from '../windowDimension'
 
 const NewCarousel = styled(Carousel)`
     /* overflow-x: initial; */
@@ -33,34 +34,59 @@ const Cards = styled.div`
     margin-top: 16px;
 `
 
-const Next = styled.div`
-    display: flex;
+const Next = styled.button`
+    display: ${({index}) => index === 4 ? `none` : `flex`};
     align-items: center;
     gap: 13px;
+    position: absolute;
+    top: ${({width})=> width <= 768 ? `480px` : `270px`};
+    right: 0;
+    background-color: transparent;
+    z-index: 2;
+    `
+const Prev = styled.button`
+    display: ${({index}) => index === 0 ? `none` : `flex`};
+    align-items: center;
+    gap: 13px;
+    position: absolute;
+    top: ${({width})=> width <= 768 ? `480px` : `270px`};
+    left: 0;
+    background-color: transparent;
+    z-index: 2;
+
 `
-const RenderArrowPrev = ()=> {
+
+const RenderArrowPrev = (clickHandler, index, width)=> {
     return (
-        <Next>
+        <Prev onClick={clickHandler} index={index} width={width}>
             <GrFormPrevious />
             <p>Prev</p>
-        </Next>
+        </Prev>
     )
 }
 
-const RenderArrowNext = ()=> {
+const RenderArrowNext = (clickHandler, index, width)=> {
     return (
-        <Next>
+        <Next onClick={clickHandler} index={index} width={width}>
             <p>Next</p>
             <GrFormNext />
         </Next>
     )
 }
+ 
 
 const EmployesMobile = () => {
+    const [index, setIndex] = useState(0);
+    const getSelectedItem = (index)=> {
+        setIndex(index);
+    }
+    const { width } = useWindowDimensions();
     return (
         <Container>
-            <NewCarousel autoPlay={false} showStatus={false} showIndicators={false}
-                renderArrowNext={RenderArrowNext} renderArrowPrev={RenderArrowPrev}
+            <NewCarousel infiniteLoop={false} showStatus={false} showIndicators={false}
+                renderArrowPrev={(clickHandler)=> RenderArrowPrev(clickHandler, index, width)}
+                renderArrowNext={(clickHandler)=> RenderArrowNext(clickHandler, index, width)} 
+                onChange={(index)=> getSelectedItem(index)}
             >
                 {
                     EmployesData.map((item, index) => { return (
@@ -70,7 +96,7 @@ const EmployesMobile = () => {
                                 <img src={item.imgMobile} alt="img"/>
                                 <img src={sticker} alt="sticker" />
                             </ImageContainer>
-                            <CardHeader  EmployeName={item.name} EmployeJob={item.job} />
+                            <CardHeaderMobile  EmployeName={item.name} EmployeJob={item.job} index={index} />
                             <Cards>
                                 <SimpleCard  yes={item.cards[0][0]} yes2={item.cards[0][1]} yes3={item.cards[0][2]} text={item.text1}>
                                     <p>{item.text1}</p>

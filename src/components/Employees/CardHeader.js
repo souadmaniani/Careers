@@ -6,10 +6,6 @@ const HeaderContainer = styled.div`
     display: flex;
     gap: 5px;
     align-items: center;
-    flex-wrap: wrap;
-    @media screen and (max-width: 768px) {
-        width: 43%;
-    }
     & > p {
         font-size: 20px;
         font-family: "Poppins medium";

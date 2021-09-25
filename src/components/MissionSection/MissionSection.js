@@ -1,6 +1,6 @@
 import React from 'react';
 import {Section} from '../SmileSection/style';
-import tooth from '../../assets/images/tooth.svg';
+import tooth from '../../assets/images/tooth.png';
 import { ParagraphMission } from './ParagraphMission'
 import  { MissionContainer, Missions, Dental, Title, Tooth} from './style'
 import Vector1 from '../../assets/images/Vector1.svg';

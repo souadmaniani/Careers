@@ -1,4 +1,2 @@
 https://styled-components.com/docs/basics#getting-started
-click on logo --> go to home page on mobile
-fix touth height on ipad pro
-use windowDimensions unstead of isMobile
+fix employes carousel on IPadPro

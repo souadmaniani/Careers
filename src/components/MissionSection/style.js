@@ -28,6 +28,7 @@ export const Dental = styled.div`
         gap: 5px;
        & > div {
             width: 100%;
+            margin-top: 32px;
         }
     }
 `
@@ -46,10 +47,22 @@ export const Tooth = styled.div`
         width: 100%;
 		height: 100%;
     }
-	@media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        order: 3;
+        img {
+            width: 60%;
+            height: 413.92px;
+        }
+    }
+	@media screen and (max-width: 767px) {
+        display: flex;
 		order: 3;
 		img {
 			height: 413.92px;
+            width: 100%;
+            align-self: flex-end;
 		}
 	}
-`
+    `

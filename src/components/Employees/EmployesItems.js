@@ -39,6 +39,8 @@ export const EmployesData = [
         text1: "I always say Dandy is a problem solver’s paradise. We’re building something completely new, and the challenges we face require fresh, creative, scalable solutions. At Dandy everyday is a crash course, whether it’s in project management, data analysis, operational execution - you name it!",
         text2: "To be able to learn this quickly with people this talented feels like something truly special. I’m humbled by the excellence I see everyday in this team and can’t wait to see what’s in store as we continue to grow.",
         cards:[["", "", ""], ["", "yes2", "yes3"]],
+        imgMobile: saraMobile,
+
     },
     {
         name: "Tynan Couture-Rashid",
