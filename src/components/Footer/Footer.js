@@ -87,6 +87,8 @@ const FooterItem = styled.div`
         padding: 22px 0 26px 16px;
         margin-right: 16px;
         width: calc(100% - 16px);
+        flex-direction: row;
+        gap: 10%;
     }
 `
 
@@ -99,20 +101,45 @@ const FooterBottom = styled.div`
     p {
         font-size: 16px;
     }
+    @media screen and (max-width: 768px){
+        padding-left: 16px;
+        gap: 10%;
+    }
 `
 const Icons = styled.div`
     display: flex;
     gap: 22px;
 `
-
+const Links = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 const LinkItem = styled(Link)`
     color: white;
     font-family: 'Poppins Regular';
     padding: 8px 0;
+    align-self: flex-start;
     &:hover {
         color: ${({theme}) => theme.color.primary}
     }
 `
+const IconsRight = styled.div`
+    display: flex;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        gap: 24px;
+    }
+`
+const LogoItem = styled(Link)`
+    color: white;
+    padding: 8px 0;
+    align-self: flex-start;
+    & > img {
+        width: 85px;
+        height: 16px;
+    }
+`
+
 const Footer = () => {
     return (
         <FooterSection>
@@ -122,24 +149,30 @@ const Footer = () => {
                         FooterData.map((item, index)=> {
                             return (
                                 <FooterItem key={index}>
-                                    <p>{item.title}</p>
-                                    <LinkItem to={item.link1}>{item.text1}</LinkItem>
-                                    <LinkItem to={item.link2}>{item.text2}</LinkItem>
-                                    <LinkItem to={item.link3}>{item.text3}</LinkItem>
+                                    <div>
+                                        <p>{item.title}</p>
+                                    </div>
+                                    <Links>
+                                        <LinkItem to={item.link1}>{item.text1}</LinkItem>
+                                        <LinkItem to={item.link2}>{item.text2}</LinkItem>
+                                        <LinkItem to={item.link3}>{item.text3}</LinkItem>
+                                    </Links>
                                 </FooterItem>
                             );
                         })
                     }
                 </FooterContainer>
                 <FooterBottom>
-                    <LinkItem to="/"><img src={Logo} alt="Logo" /></LinkItem>
-                    <p>© 2020 Dandy. Inc, All Rights Reserved.</p>
-                    <Icons>
-                    <LinkItem to="/"><img src={twitter} alt="twitter" /></LinkItem>
-                    <LinkItem to="/"><img src={linkedin} alt="linkedin" /></LinkItem>
-                    <LinkItem to="/"><img src={fb} alt="fb" /></LinkItem>
-                    <LinkItem to="/"><img src={instagram} alt="insta" /></LinkItem>
-                    </Icons>
+                    <LogoItem to="/"><img src={Logo} alt="Logo" /></LogoItem>
+                    <IconsRight>
+                        <p>© 2020 Dandy. Inc, All Rights Reserved.</p>
+                        <Icons>
+                            <LinkItem to="/"><img src={twitter} alt="twitter" /></LinkItem>
+                            <LinkItem to="/"><img src={linkedin} alt="linkedin" /></LinkItem>
+                            <LinkItem to="/"><img src={fb} alt="fb" /></LinkItem>
+                            <LinkItem to="/"><img src={instagram} alt="insta" /></LinkItem>
+                        </Icons>
+                    </IconsRight>
                 </FooterBottom>
             </NewContainer>
         </FooterSection>
