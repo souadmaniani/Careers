@@ -2,12 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ItemContainer = styled.div`
+    & > div {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
     h4 {
         font-size: 22px;
         line-height: 24px;
     }
     p {
-        font-size: 20px;
+        font-size: 16px;
         color: ${({theme}) => theme.color.lighterText};
         line-height: 24px;
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { SmileSection, MissionSection, ImagesSection, CoreValuesSection,
-        Employes, WorkHappier } from '..';
+        Employes, WorkHappier, Dogs, RoleSection, Footer } from '..';
 
 const Home = () => {
     return (
@@ -11,6 +11,9 @@ const Home = () => {
             <CoreValuesSection />
             <Employes />
             <WorkHappier />
+            <Dogs />
+            <RoleSection />
+            <Footer />
         </>
     )
 }

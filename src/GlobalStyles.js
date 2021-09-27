@@ -46,9 +46,9 @@ const ResetDefault = css`
   h6 {
     display: block;
     font-weight: 700;
-    &:first-letter {
+    /* &:first-letter {
       text-transform: uppercase;
-    }
+    } */
   }
 
   i {
@@ -228,9 +228,9 @@ const Typography = css`
     font-family: "Poppins Medium";
     font-weight: 700;
     line-height: 1.2;
-    &::first-letter {
+    /* &::first-letter {
       text-transform: uppercase;
-    }
+    } */
   }
 
   h1 {
@@ -263,12 +263,12 @@ const Typography = css`
     font-family: "Poppins Regular";
     font-weight: 400;
     font-size: 23px;
-    &::first-letter {
+    /* &::first-letter {
       text-transform: uppercase;
-    }
+    } */
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1300px) {
   h1 {
     font-size: ${({ theme }) => theme.fontSize.xll};
   }

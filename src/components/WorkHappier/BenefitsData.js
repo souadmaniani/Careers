@@ -14,24 +14,14 @@ export const Benefits = [
         text:"The best healthcare benefits, because you deserve it!",
     },
     {
-        icon:gym,
-        title:"Free gym? Free gym!",
-        text:"Your monthly gym subscription is on us!",
-    },
-    {
-        icon:hardware,
-        title:"All the equipment you need",
-        text:"All the hardware and software you need to do your job well.",
-    },
-    {
-        icon:program,
-        title:"401K Program",
-        text:"Save & prepare for your retirement.",
-    },
-    {
         icon:parental,
         title:"Parental Leave",
         text:"Focus on the things that matter, when the time comes.",
+    },
+    {
+        icon:gym,
+        title:"Free gym? Free gym!",
+        text:"Your monthly gym subscription is on us!",
     },
     {
         icon:office,
@@ -39,9 +29,19 @@ export const Benefits = [
         text:"No need to relocate or commute to an office!",
     },
     {
+        icon:hardware,
+        title:"All the equipment you need",
+        text:"All the hardware and software you need to do your job well.",
+    },
+    {
         icon:vacation,
         title:"Unlimited vacation",
         text:"Plus extra time for honeymoons & moving.",
+    },
+    {
+        icon:program,
+        title:"401K Program",
+        text:"Save & prepare for your retirement.",
     },
     {
         icon:company,

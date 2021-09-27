@@ -12,7 +12,7 @@ const CardContainer = styled.div`
     }
     & > p {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 14px;
         color: ${({theme}) => theme.color.lighterText};
     }
 

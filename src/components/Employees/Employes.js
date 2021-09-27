@@ -15,6 +15,7 @@ const EmployesSection = styled.div`
 const NewContainer = styled(Container)`
     position: relative;
     padding: 0px 117px 80px 132px;
+    margin-bottom: 80px;
     /* @media screen and (max-width: 1024px) {
         padding: 0px 132px 80px;
     } */

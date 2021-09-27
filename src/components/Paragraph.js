@@ -10,13 +10,14 @@ export const Parag = styled.div`
     & > p {
         font-size: ${({fontSize}) => fontSize};
         width: ${({pWidth}) => pWidth};
+        color: ${({color}) => color};
 }
 `
 
-const Paragraph = ({title, text, maxWidth, mb, fontSize, margin, pWidth}) => {
+const Paragraph = ({title, text, maxWidth, mb, fontSize, margin, pWidth, color}) => {
     return (
         <Parag maxWidth={maxWidth} mb={mb} fontSize={fontSize}
-            margin={margin}  pWidth={pWidth}>
+            margin={margin}  pWidth={pWidth} color={color}>
             <h1>{title}</h1>
             <p>{text}</p>
         </Parag>

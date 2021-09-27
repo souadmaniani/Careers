@@ -5,4 +5,7 @@ export { default as ImagesSection} from './ImagesSection/ImagesSection';
 export { default as CoreValuesSection} from './CoreValuesSection/CoreValuesSection';
 export { default as Employes } from './Employees/Employes';
 export { default as WorkHappier } from './WorkHappier/WorkHappier';
+export { default as Dogs } from './Dogs/Dogs';
+export { default as RoleSection } from './RoleSection/RoleSection';
+export { default as Footer } from './Footer/Footer';
 export { default as Home } from './pages/Home';
