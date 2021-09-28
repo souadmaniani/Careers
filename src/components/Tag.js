@@ -10,7 +10,7 @@ const TagContainer = styled.div`
     gap: 10px;
     cursor: pointer;
     & > p {
-        font-size: ${({theme}) => theme.fontSize.sm};
+        font-size: 14px;
     }
 `
 const TagNumber = styled.div`

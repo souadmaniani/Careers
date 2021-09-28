@@ -7,12 +7,12 @@ const ButtonContainer = styled.div`
     align-items: center ;
     border-bottom: 4px solid ${({theme})=> theme.color.border} ;
     & > p {
-        font-size: 20px;
+        font-size: 18px;
         font-family: "Poppins medium";
     }
     & > span {
         color: ${({theme}) => theme.color.lighterText};
-        font-size: 20px;
+        font-size: 18px;
     }
 `
 const Button = ({EmployeName,EmployeJob}) => {

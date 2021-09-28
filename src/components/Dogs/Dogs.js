@@ -14,6 +14,7 @@ const DogsImagesContainer = styled.div`
     gap: 24px;
 `
 const ImageContainer = styled.div`
+    display: flex;
     align-self: flex-end;
     & > img {
         width: 100%;

@@ -45,7 +45,7 @@ const LocationsItems = () => {
         <>
         {
             width <= 768 ?
-            <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false} width={width}>
+            <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false} width={width} showThumbs={false}>
                 <label>All Locations</label>
                 {
                     LocationsData.map((item, index)=> {

@@ -1,7 +1,3 @@
-https://styled-components.com/docs/basics#getting-started
-fix employes carousel on IPadPro w hta f mobile yakh
-fix work happier (benefites  alignement)
-fix font-size of all elements ola change font-family
 onboarding need line sur
 fix ul in carousel length
 gap does not work on other browsers

@@ -7,7 +7,7 @@ import twitter from '../../assets/images/twitter.svg'
 import instagram from '../../assets/images/instagram.svg'
 import linkedin from '../../assets/images/linkedin.svg'
 import { Link } from "react-router-dom";
-
+import useWindowDimensions from '../windowDimension'
 const FooterData=[
     {
         title: "Visit us",
@@ -89,6 +89,9 @@ const FooterItem = styled.div`
         width: calc(100% - 16px);
         flex-direction: row;
         gap: 10%;
+        p {
+            font-size: 18px;
+        }
     }
 `
 
@@ -102,7 +105,7 @@ const FooterBottom = styled.div`
         font-size: 16px;
     }
     @media screen and (max-width: 768px){
-        padding-left: 16px;
+        padding: 24px 16px;
         gap: 10%;
     }
 `
@@ -113,6 +116,7 @@ const Icons = styled.div`
 const Links = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: ${({index, width}) => index !== 2 && width <=768 ? `30px` : 0 };
 `
 const LinkItem = styled(Link)`
     color: white;
@@ -125,6 +129,8 @@ const LinkItem = styled(Link)`
 `
 const IconsRight = styled.div`
     display: flex;
+    justify-content: space-between;
+    width: 68%;
     @media screen and (max-width: 768px){
         flex-direction: column;
         gap: 24px;
@@ -141,6 +147,7 @@ const LogoItem = styled(Link)`
 `
 
 const Footer = () => {
+    const { width } = useWindowDimensions();
     return (
         <FooterSection>
             <NewContainer>
@@ -152,7 +159,7 @@ const Footer = () => {
                                     <div>
                                         <p>{item.title}</p>
                                     </div>
-                                    <Links>
+                                    <Links index={index} width={width}>
                                         <LinkItem to={item.link1}>{item.text1}</LinkItem>
                                         <LinkItem to={item.link2}>{item.text2}</LinkItem>
                                         <LinkItem to={item.link3}>{item.text3}</LinkItem>
@@ -165,7 +172,9 @@ const Footer = () => {
                 <FooterBottom>
                     <LogoItem to="/"><img src={Logo} alt="Logo" /></LogoItem>
                     <IconsRight>
-                        <p>© 2020 Dandy. Inc, All Rights Reserved.</p>
+                        <div>
+                            <p>© 2020 Dandy. Inc, All Rights Reserved.</p>
+                        </div>
                         <Icons>
                             <LinkItem to="/"><img src={twitter} alt="twitter" /></LinkItem>
                             <LinkItem to="/"><img src={linkedin} alt="linkedin" /></LinkItem>

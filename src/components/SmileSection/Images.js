@@ -37,13 +37,13 @@ export const Images=[
         top: "",
         left:"",
         bottom: "132px",
-        right: "73px"
+        right: "44px"
     },
     {
         src: Man1,
         alt: "man1",
         top: "160px",
-        left:"180px",
+        left:"160px",
         right:"",
         bottom:""
     },

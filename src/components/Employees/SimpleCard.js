@@ -13,6 +13,9 @@ const SimpleCardContainer = styled.div`
   & > p {
       font-size: 18px;
       line-height: 24px;
+      @media screen and (max-width: 1024px){
+        font-size: 15px;
+      }
   }
   & > img:first-child {
     visibility: ${({yes}) => yes ? `visible` : `hidden`};

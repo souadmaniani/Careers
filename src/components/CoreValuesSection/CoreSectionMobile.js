@@ -31,7 +31,7 @@ const CoreSectionMobile = () => {
                 title="Dandians live by our core values"
                 text="And if you do too, you might have the secret recipe required to be a great Dandian yourself!"
             />
-            <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false} >
+            <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false} showThumbs={false}>
                 {
                     CardsItems.map((item, index)=> { return ( 
                         <Card key={index} emoji={item.emoji} title={item.title} content={item.content} />

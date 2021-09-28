@@ -17,7 +17,12 @@ const EmployeContainer = styled.div``
 
 const ImageContainer = styled.div`
     position: relative;
-    
+    & > img:first-child{
+        height: 428px;
+        @media screen and (max-width: 490px){
+            height: 216px;
+        }
+    }
     & > img:nth-child(2) {
         position: absolute;
         top: -26px;
@@ -30,7 +35,7 @@ const ImageContainer = styled.div`
 const Cards = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     margin-top: 16px;
 `
 
@@ -39,7 +44,7 @@ const Next = styled.button`
     align-items: center;
     gap: 13px;
     position: absolute;
-    top: ${({width})=> width <= 768 ? `480px` : `270px`};
+    top: ${({width})=> width === 768 ? `480px` : `250px`};
     right: 0;
     background-color: transparent;
     z-index: 2;
@@ -49,7 +54,7 @@ const Prev = styled.button`
     align-items: center;
     gap: 13px;
     position: absolute;
-    top: ${({width})=> width <= 768 ? `480px` : `270px`};
+    top: ${({width})=> width === 768 ? `480px` : `250px`};
     left: 0;
     background-color: transparent;
     z-index: 2;
@@ -83,7 +88,7 @@ const EmployesMobile = () => {
     const { width } = useWindowDimensions();
     return (
         <Container>
-            <NewCarousel infiniteLoop={false} showStatus={false} showIndicators={false}
+            <NewCarousel infiniteLoop={false} showStatus={false} showIndicators={false} showThumbs={false}
                 renderArrowPrev={(clickHandler)=> RenderArrowPrev(clickHandler, index, width)}
                 renderArrowNext={(clickHandler)=> RenderArrowNext(clickHandler, index, width)} 
                 onChange={(index)=> getSelectedItem(index)}
@@ -98,10 +103,10 @@ const EmployesMobile = () => {
                             </ImageContainer>
                             <CardHeaderMobile  EmployeName={item.name} EmployeJob={item.job} index={index} />
                             <Cards>
-                                <SimpleCard  yes={item.cards[0][0]} yes2={item.cards[0][1]} yes3={item.cards[0][2]} text={item.text1}>
+                                <SimpleCard  yes={item.cards1[0][0]} yes2={item.cards1[0][1]} yes3={item.cards1[0][2]} text={item.text1}>
                                     <p>{item.text1}</p>
                                 </SimpleCard>
-                                <SimpleCard  yes={item.cards[1][0]} yes2={item.cards[1][1]} yes3={item.cards[1][2]} text={item.text2}>
+                                <SimpleCard  yes={item.cards1[1][0]} yes2={item.cards1[1][1]} yes3={item.cards1[1][2]} text={item.text2}>
                                     <p>{item.text2}</p>
                                 </SimpleCard>
                             </Cards>

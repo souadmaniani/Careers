@@ -8,7 +8,6 @@ const ItemContainer = styled.div`
         margin-bottom: 8px;
     }
     h4 {
-        font-size: 22px;
         line-height: 24px;
     }
     p {

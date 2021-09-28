@@ -16,9 +16,9 @@ const NewContainer = styled(Container)`
     position: relative;
     padding: 0px 117px 80px 132px;
     margin-bottom: 80px;
-    /* @media screen and (max-width: 1024px) {
-        padding: 0px 132px 80px;
-    } */
+    @media screen and (max-width: 1024px) {
+        padding: 0px 5px 132px 80px;
+    }
 `
 const EmployeContainer = styled.div`
     position: relative;
@@ -57,6 +57,7 @@ const NewCarousel = styled(Carousel)`
             display: flex !important;
             justify-content: space-between !important;
             gap: 40px;
+            flex-wrap: wrap;
             .selected {
                 display:none;
             }
@@ -82,7 +83,7 @@ const Employes = () => {
     const { width } = useWindowDimensions();
     return (
         <EmployesSection>
-            { width <= 1024 ? <EmployesMobile /> :
+            { width <= 768 ? <EmployesMobile /> :
             <NewContainer>
                 <NewCarousel autoPlay={false} showIndicators={false} showStatus={false} showArrows={false}
                     renderThumbs= {RenderThumbs}
